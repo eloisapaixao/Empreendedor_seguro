@@ -1,0 +1,139 @@
+<input type="radio" name="log" id="log2"></input>
+                    <label className="label" for="log2">Cadastrar</label>
+
+                    <input type="radio" name="log" id="log1" checked></input>
+                    <label className="label" for="log1">Entrar</label>
+
+                    <div className="log">
+                        <div className="cont">
+                            <img className="img" src={redes}></img>
+                            <input type="text" name="txt1" id="txtNome" placeholder="Usuário ou e-mail"></input><br></br><br></br>
+                            <input type="text" name="txt1" id="txtEmail" placeholder="Senha"></input><br></br><br></br>
+                            <input type="checkbox" name="ck" id="ck"></input>
+                            <label for="ck">Lembrar-me</label><br></br>
+                            <button id="btn1">Acessar</button>
+
+                            <h3>Junste-se a mais de 150 mil empreendedores de impacto!</h3>
+                            <p>Acesse gratuitamente todos os nossos conteúdos</p>
+                        </div>
+                        <div className="cont">
+                            <img className="img" src={redes}></img>
+                            <input type="text" name="txt1" id="txtNome" placeholder="Usuário ou e-mail"></input><br></br><br></br>
+                            <input type="text" name="txt1" id="txtEmail" placeholder="Senha"></input><br></br><br></br>
+                            <input type="checkbox" name="ck" id="ck"></input>
+                            <label for="ck">Lembrar-me</label><br></br>
+                            <button id="btn1">Acessar</button>
+
+                            <h3>Junste-se a mais de 150 mil empreendedores de impacto!</h3>
+                            <p>Acesse gratuitamente todos os nossos conteúdos</p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+.login{
+    width: 700px;
+    height: 450px;
+    margin-top: 60px;
+    margin-left: 330px;
+}
+
+#log2{
+    display: none;
+}
+
+#log1{
+    display: none;
+}
+
+.label {
+    display: block;
+    float: right;
+    padding: 12px 65px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.login label:hover,
+.login input:checked + label {
+  background: #5b9780;
+  color: #fff;
+}
+
+.log {
+    clear: both;
+    perspective: 400px;
+    -webkit-perspective: 400px;
+}
+
+.log .cont {
+    background: #b7ba86;
+    width: 700px;
+    position: absolute;
+    padding: 30px 0px 110px;
+    line-height: 1.4em;
+    opacity: 0;
+    transform: rotateX(-20deg);
+    transform-origin: top center;
+    transition: opacity .3s, transform 1s;
+    z-index: 0;
+}
+
+#log1:checked ~ .log .cont:nth-of-type(1),
+#log2:checked ~ .log .cont:nth-of-type(2){
+  transform: rotateX(0);
+  opacity: 1;
+  z-index: 1;
+}
+
+#txtNome{
+    width: 300px;
+    padding: 10px;
+}
+
+#txtEmail{
+    width: 300px;
+    padding: 10px;
+}
+
+#ck{
+    margin-left: -220px;
+}
+
+#btn1{
+    margin-top: 50px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #818365;
+    margin-left: 340px;
+}
+
+h3{
+    color: rgb(44, 42, 42);
+    float: left;
+    margin-left: 16px;
+    width: 300px;
+    margin-top: -80px;
+}
+
+p{
+    float: left;
+    margin-left: 55px;
+    font-size: 10px;
+}
+
+.img{
+    border: 1px solid white;
+    width: 324px;
+    height: 200px;
+    float: left;
+    margin-top: -72px;
+}

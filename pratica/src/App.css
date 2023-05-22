@@ -1,0 +1,38 @@
+:root {
+  --bg-menu: #b7ba86;
+  --logo-width: 180px;
+  --content-header-height: 60px;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Pacifico", sans-serif;
+  margin: 0;
+}
+  /* Lay-out */
+.App {
+  margin: 0px;
+  display: grid;
+  grid-template-columns: var(--logo-width)  1fr;
+  grid-template-rows:
+  var(--content-header-height);
+  grid-template-areas:
+  "logo menu";
+  height: 100vh;
+  background-color: #bfc38b;
+}
+
+aside.logo{
+  grid-area: logo;
+  margin-left: 10px;
+}
+
+nav.menu {
+  grid-area: menu;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 20px;
+}
+
+
