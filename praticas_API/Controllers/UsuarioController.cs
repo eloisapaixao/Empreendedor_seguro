@@ -108,5 +108,25 @@ namespace praticas_API.Controllers
                 return this.StatusCode(StatusCodes.Status500InternalServerError,"Falha no acesso ao banco de dados.");
             }
         }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> login(Usuario dadosUsuarioAlt)
+        {
+            try {
+                Usuario usuario = _context.Usuario.ToList().Find(u => u.cpf == dadosUsuarioAlt.cpf);
+
+                if (usuario == null)
+                    return NotFound();
+
+                if (usuario.senha == dadosUsuarioAlt.senha)
+                    return Ok(usuario); 
+
+                return Unauthorized();
+            }
+            catch
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError,"Falha no acesso ao banco de dados.");
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import './CrudUsuario.css'
 import axios from "axios"
 import redes from "../assets/imagens/redes.png"
+import { useNavigate } from "react-router";
 //aaaaaaaaaaaaaaa
 
 const urlAPI = "https://localhost:7204/api/Usuario"
@@ -13,6 +14,7 @@ const initialState = {
 
 export const CrudUsuario = () => {
     const [state, setState] = useState({ ...initialState });
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios(urlAPI).then(resp => {
@@ -41,6 +43,10 @@ export const CrudUsuario = () => {
             const lista = this.getListaAtualizada(resp.data)
             setState({ usuario: initialState.usuario, lista })
         })
+
+        alert("Seu cadastro foi realizado com sucesso!!")
+        navigate("/cursos");
+        window.location.reload();
     })
 
     function getListaAtualizada(usuario) {
@@ -75,6 +81,28 @@ export const CrudUsuario = () => {
         }
     }
 
+    function ValidarLogin(){
+        const cpf = document.querySelector("#txtNome").value
+        const senha = Number(document.querySelector("#txtEmail").value)
+
+        axios.post(urlAPI + '/login', {
+            cpf,
+            senha
+        }).then(res => {
+            if (res.status === 200)
+            {
+                sessionStorage.setItem("usuario", JSON.stringify(res.data))
+                window.location.href = '/cursos'
+            }
+        }).catch(err => {
+            if (err.response.status === 401)
+                alert("Senha incorreta!");
+
+            else
+                alert("Usuário inexistente! Cadastre.")
+        })
+    }
+
     return (
         <div className="content">
             <div className="login">
@@ -88,10 +116,10 @@ export const CrudUsuario = () => {
                     <div className="cont">
                         <img className="img" src={redes}></img>
                         <input type="text" name="txt1" id="txtNome" placeholder="Digite seu cpf"></input><br></br><br></br>
-                        <input type="text" name="txt2" id="txtEmail" placeholder="Senha"></input><br></br><br></br>
+                        <input type="password" name="txt2" id="txtEmail" placeholder="Senha"></input><br></br><br></br>
                         <input type="checkbox" name="ck" id="ck"></input>
                         <label for="ck">Lembrar-me</label><br></br>
-                        <button id="btn1">Acessar</button>
+                        <button id="btn1" onClick={ValidarLogin}>Acessar</button>
 
                         <h3>Junte-se a mais de 150 mil empreendedores de impacto!</h3>
                         <p>Acesse gratuitamente todos os nossos conteúdos</p>

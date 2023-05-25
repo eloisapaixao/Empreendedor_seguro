@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "04gWWqIT+BDBvkHGgjScX4WHduQkjl9W8zdmzjV51MylNgJHm2ngrenYii3Wf3C+b0QGdwzi2j06QOrIVZU31A==",
+  "dgSpecHash": "Y4rDDSSSFq/J4RMswiFNBx5EV77zeuToK11EeMo2xtHgWRD/djCRyAniu+23WgFnV/GpsYCmAS6wuTVTk85rYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\u22127\\Documents\\GitHub\\Empreendedor-seguro\\praticas_API\\praticas_API.csproj",
+  "projectFilePath": "C:\\Users\\u22127\\Documents\\GitHub\\Empreendedor_seguro\\praticas_API\\praticas_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\u22127\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\u22127\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
