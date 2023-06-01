@@ -22,10 +22,6 @@ export const CrudUsuario = () => {
         })
     }, []);
 
-    function limpar() {
-        setState({ usuario: initialState.usuario });
-    }
-
     const salvar = (() =>
     {
         const user = initialState.usuario;
@@ -42,30 +38,15 @@ export const CrudUsuario = () => {
         .then(resp => {
             const lista = this.getListaAtualizada(resp.data)
             setState({ usuario: initialState.usuario, lista })
+        }).catch(err => {
+            alert("Usuário já cadastrado!")
         })
-
-        alert("Seu cadastro foi realizado com sucesso!!")
-        navigate("/cursos");
-        window.location.reload();
     })
 
     function getListaAtualizada(usuario) {
         const lista = this.state.lista.filter(a => a.cpf !== usuario.cpf);
         lista.unshift(usuario);
         return lista;
-    }
-
-    function atualizaCampo(event) {
-        //clonar usuário a partir do state, para não alterar o state diretamente
-        const usuario = { ...this.state.usuario };
-        //usar o atributo NAME do input para identificar o campo a ser atualizado
-        usuario[event.target.name] = event.target.value;
-        //atualizar o state
-        setState({ usuario });
-    }
-
-    function carregar(usuario) {
-        setState({ usuario })
     }
 
     function remover(usuario) {
