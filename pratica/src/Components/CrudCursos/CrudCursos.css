@@ -1,0 +1,71 @@
+/*primeira div*/
+.page-curso1{
+    display: flex;
+    padding: 10px;
+}
+
+.curso-div{
+    display:inline-block;
+    border: solid #b7ba86 1px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px;
+    height: 200px;
+    margin-left: 80px;
+    margin-top: 10px;
+    margin-bottom: 55px;
+    background-color: rgb(183, 186, 134);
+    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+}
+
+.curso-div h4{
+    margin-left: 4px;
+    width: 145px;
+}
+
+.curso-div img{
+    margin-top: 0px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+/*segunda div*/
+.page-cursos2{
+    overflow-y: scroll;
+    margin-left: 80px;
+    width: 1202px;
+    height: 245px;
+}
+
+.curso-div2{
+    border-top: solid black 1px;
+    padding: 10px;
+    width: 1165px;
+    height: 60px;
+    background-color: #b7ba86;
+    display: flex;
+    align-items: center;
+}
+
+.curso-div2 img{
+    margin-top: 0px;
+    width: 130px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.curso-div2 h5{
+    margin-top: 20px;
+    margin-left: 15px;
+    width: 150px;
+}
+
+.curso-div2 button{
+    width: 100px;
+    border-radius: 50px;
+    height: 25px;
+    margin-left: 750px;
+    border: solid black 1px;
+}

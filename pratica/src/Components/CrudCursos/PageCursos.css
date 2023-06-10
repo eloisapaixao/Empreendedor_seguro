@@ -1,0 +1,25 @@
+.titulo{
+    height: 200px;
+    background-color: #9da06c;
+    width: 1360px;
+    display: flex;
+    margin-bottom: 60px;
+}
+
+.corpo_imagem{
+    margin-top: 10px;
+    width: 180px;
+    height: 180px;
+    margin-left: 30px;
+    border-radius: 200px;
+}
+
+h4{
+    margin-top: 70px;
+    margin-left: 40px;
+}
+
+h1{
+    margin-top: 100px;
+    margin-left: -70px;
+}

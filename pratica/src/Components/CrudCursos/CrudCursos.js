@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 import './CrudCursos.css'
 import axios from "axios"
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router"
+import Modal from "./Modal"
 
 const urlAPI = "https://localhost:7204/api/Cursos"
 
@@ -11,8 +12,10 @@ const initialState = {
 }
 
 export const CrudCursos = () => {
-    const [state, setState] = useState({ ...initialState });
-    const navigate = useNavigate();
+    const [state, setState] = useState({ ...initialState })
+    const navigate = useNavigate()
+
+    const [openModal, setOpenModal] = useState(false)
 
     useEffect(() => {
         axios(urlAPI).then(resp => {
@@ -20,31 +23,38 @@ export const CrudCursos = () => {
         })
     }, []);
 
-    function ValidarLogin(){
-        const cpf = document.querySelector("#txtNome").value
-        const senha = Number(document.querySelector("#txtEmail").value)
-
-        axios.post(urlAPI + '/login', {
-            cpf,
-            senha
-        }).then(res => {
-            if (res.status === 200)
-            {
-                sessionStorage.setItem("usuario", JSON.stringify(res.data))
-                window.location.href = '/cursos'
-            }
-        }).catch(err => {
-            if (err.response.status === 401)
-                alert("Senha incorreta!");
-
-            else
-                alert("Usuário inexistente! Cadastre.")
-        })
-    }
-
     return (
         <div className="content">
+            <div className="page-curso1">
+                {state.lista.map(
+                    (curso) => 
+                    <div className="curso-div">
+                        <img src={"../assests/ImagensCursos" + curso.imagem}></img>
+                        <h4><strong>{curso.nomeCurso}</strong></h4>
+                    </div>
+                )}
+            </div>
             
+            <div className="page-cursos2">
+                {state.lista.map(
+                    (curso) => 
+                    <div className="curso-div2">
+                        <img src={"../assests/ImagensCursos" + curso.imagem}></img>
+                        <h5><strong>{curso.nomeCurso}</strong></h5>
+                        <button onClick={() => setOpenModal(true)}>Saiba mais</button>
+                        <div>
+                            <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}>
+                                <img className="modal_imagem" src={"../assests/ImagensCursos" + curso.imagem}></img>
+                                <h3 className="modal_nomeCurso">{curso.nomeCurso}</h3>
+                                <h5 className="modal_descricao">{curso.descricao}</h5>
+                                <p className="modal_detalhes">{curso.qtdAulas}</p>
+                                <p className="modal_detalhes">{curso.cargaHoraria}</p>
+                                <p className="modal_detalhes">{curso.qtdExercicio}</p>
+                            </Modal>
+                        </div>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }

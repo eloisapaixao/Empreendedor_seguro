@@ -3,7 +3,6 @@ import './CrudUsuario.css'
 import axios from "axios"
 import redes from "../assets/imagens/redes.png"
 import { useNavigate } from "react-router";
-//aaaaaaaaaaaaaaa
 
 const urlAPI = "https://localhost:7204/api/Usuario"
 

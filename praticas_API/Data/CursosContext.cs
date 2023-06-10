@@ -5,10 +5,10 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace praticas_API.Data
 {
-    public class UsuarioContext : DbContext
+    public class CursosContext : DbContext
     {
         protected readonly IConfiguration Configuration;
-        public UsuarioContext(IConfiguration configuration)
+        public CursosContext(IConfiguration configuration)
         {   
             Configuration = configuration;
         }
@@ -19,6 +19,6 @@ namespace praticas_API.Data
             options.UseSqlServer(Configuration.GetConnectionString("StringConexaoSQLServer"));
         }
 
-        public DbSet<Usuario>? Usuario {get;set;}
+        public DbSet<Cursos>? Cursos {get;set;}
     }
 }
