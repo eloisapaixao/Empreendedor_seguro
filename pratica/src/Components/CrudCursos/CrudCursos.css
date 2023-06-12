@@ -35,15 +35,15 @@
 .page-cursos2{
     overflow-y: scroll;
     margin-left: 80px;
-    width: 1202px;
-    height: 245px;
+    width: 1435px;
+    height: 335px;
 }
 
 .curso-div2{
     border-top: solid black 1px;
     padding: 10px;
-    width: 1165px;
-    height: 60px;
+    width: 1398px;
+    height: 90px;
     background-color: #b7ba86;
     display: flex;
     align-items: center;
@@ -66,10 +66,11 @@
     width: 100px;
     border-radius: 50px;
     height: 25px;
-    margin-left: 750px;
+    margin-left: 980px;
     border: solid black 1px;
 }
 
+/*Modal*/
 .modal_desc{
     position: fixed;
     top: 50%;
@@ -85,15 +86,16 @@
 .modal_desc div{
     position: fixed;
     top: 50%;
-    left: 20%;
+    left: 29%;
     transform: translate(-50%, -50%);
-    width: 350px;
-    height: 320px;
+    width: 480px;
+    height: 500px;
     border-radius: 20px;
     display: flex;
 }
 
 .modal_nomeCurso{
+    margin-top: 20px;
     width: 500px;
     height: 50px;
 }
