@@ -49,7 +49,7 @@
     align-items: center;
 }
 
-.curso-div2 img{
+.curso-div2-img{
     margin-top: 0px;
     width: 130px;
     height: 60px;
@@ -68,4 +68,40 @@
     height: 25px;
     margin-left: 750px;
     border: solid black 1px;
+}
+
+.modal_desc{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 150px;
+    width: 450px;
+    height: 120px;
+    border-radius: 20px;
+    display: flex;
+}
+
+.modal_desc div{
+    position: fixed;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 320px;
+    border-radius: 20px;
+    display: flex;
+}
+
+.modal_nomeCurso{
+    width: 500px;
+    height: 50px;
+}
+
+.modal_descricao{
+    width: 500px;
+}
+
+.modal_detalhes{
+    
 }

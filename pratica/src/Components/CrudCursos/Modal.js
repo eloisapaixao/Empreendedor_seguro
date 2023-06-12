@@ -1,4 +1,5 @@
 import React, { Children } from "react"
+import './CrudCursos.css'
 
 const BACKGROUND_STYLE = {
     position: 'fixed',
@@ -17,25 +18,26 @@ const MODAL_STYLE = {
     transform: 'translate(-50%, -50%)',
     padding: '150px',
     backgroundColor: 'rgb(183, 186, 134)',
-    width: '400px',
-    height: '140px',
+    width: '500px',
+    height: '200px',
     borderRadius: '20px',
     display: 'flex'
 }
 
 const X_STYLE = {
-    marginTop: '-130px',
-    marginLeft: '510px'
+    position: 'absolute',
+    marginTop: '-135px',
+    marginLeft: '610px'
 }
 
-export default function Modal({isOpen, setModalOpen, children}){
+export default function Modal({isOpen, objeto, children}){
     
     if (isOpen){    
         return(
             <div style={BACKGROUND_STYLE}>
                 <div style={MODAL_STYLE}>
-                    <div onClick={setModalOpen} style={X_STYLE}>X</div>
-                    <div>{children}</div>
+                    <div onClick={() => objeto.setOpenModal(!isOpen)} style={X_STYLE}>X</div>
+                    <div className="modal_desc">{children}</div>
                 </div>
             </div>
         )

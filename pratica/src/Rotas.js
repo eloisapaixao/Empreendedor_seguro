@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom"
 import { CrudUsuario } from './Components/CrudUsuario/CrudUsuario'
-import { CrudCursos } from './Components/CrudCursos/CrudCursos'
+import CrudCursos from './Components/CrudCursos/CrudCursos'
 import { PageCursos } from './Components/CrudCursos/PageCurso'
 
 export default function Rotas(){
