@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import './PageCursos.css'
 import axios from "axios"
 import { useNavigate } from "react-router"
-import Modal from "./Modal"
+import { useParams } from "react-router-dom"
 
 const urlAPI = "https://localhost:7204/api/Cursos"
 
@@ -13,7 +13,7 @@ const initialState = {
 
 export const PageCursos = () => {
     const [state, setState] = useState({ ...initialState })
-    const navigate = useNavigate()
+    const {id} = useParams()
 
     useEffect(() => {
         axios(urlAPI).then(resp => {
