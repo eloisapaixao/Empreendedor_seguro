@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AGkyWx7OZ4tMO7/xs1eXnbtfzYoPLaS4Jw5zuEuf23avQD5C8mhhBrBS0HvTSvEf6mNXpXHBN3JtdKVFDYWwUA==",
+  "dgSpecHash": "8abJADo4DG0KKgyG+AMwbCjfBMyTbjs98YvfPF0E7Yw3TzZVoojSLZVl9rGnQh9EAaPi0O4Xzo05SK3p4rG/Lw==",
   "success": true,
   "projectFilePath": "C:\\Users\\u22127\\Documents\\GitHub\\Empreendedor_seguro\\praticas_API\\praticas_API.csproj",
   "expectedPackageFiles": [
@@ -76,7 +76,11 @@
     "C:\\Users\\u22127\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
     "C:\\Users\\u22127\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\u22127\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\u22127\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+    "C:\\Users\\u22127\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\u22127\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.18\\microsoft.netcore.app.ref.6.0.18.nupkg.sha512",
+    "C:\\Users\\u22127\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.18\\microsoft.windowsdesktop.app.ref.6.0.18.nupkg.sha512",
+    "C:\\Users\\u22127\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.18\\microsoft.aspnetcore.app.ref.6.0.18.nupkg.sha512",
+    "C:\\Users\\u22127\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.18\\microsoft.netcore.app.host.win-x64.6.0.18.nupkg.sha512"
   ],
   "logs": []
 }

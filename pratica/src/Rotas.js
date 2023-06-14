@@ -8,7 +8,7 @@ export default function Rotas() {
     return (
         <Routes>
                 <Route exact path='/' element />
-                <Route path='/inicio' element={<PageCursos />} />
+                <Route path='/inicio' element/>
                 <Route path='/cursos' element={<CrudCursos />} />
                 <Route path='/login' element={<CrudUsuario />} />
                 <Route path='/pageCurso/:id' element={<PageCursos />} />

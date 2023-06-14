@@ -1,55 +1,53 @@
-import React, { Component } from "react"
-import './CrudCursos.css'
-import axios from "axios"
-import { useNavigate } from "react-router"
+import React, { Component } from "react";
+import "./CrudCursos.css";
+import axios from "axios";
+import { useNavigate } from "react-router";
 
-const urlAPI = "https://localhost:7204/api/Cursos"
-
+const urlAPI = "https://localhost:7204/api/Cursos";
 
 const initialState = {
-    curso: { id: 0, imagem: ' ', nomeCurso: ' ', descricao: ' ', qtdAulas: 0, cargaHoraria: 0, qtdExercicio: 0 },
-    lista: []
-}
+    curso: { id: 0, imagem: " ", nomeCurso: " ", descricao: " ", qtdAulas: 0, cargaHoraria: 0, qtdExercicio: 0 },
+    lista: [],
+};
 
-export default class CrudCursos extends Component {
-    state = { ...initialState }
+export default function CrudCursos() {
+    const navigate = useNavigate();
+    const [state, setState] = React.useState({ ...initialState });
 
-    componentDidMount() {
-        axios(urlAPI).then(resp => {
-            this.setState({ lista: resp.data })
-        })
-    }
+    React.useEffect(() => {
+        axios(urlAPI).then((resp) => {
+            setState({ lista: resp.data });
+        });
+    }, []);
 
-    getCurso(codCurso) {
-        axios["get"](urlAPI + `/${codCurso}`).then(resp => {
-            this.setState({ curso: resp.data })
-        })
-    }
+    const getCurso = (codCurso) => {
+        axios.get(urlAPI + `/${codCurso}`).then((resp) => {
+            setState({ curso: resp.data });
+            navigate(`/pageCurso/${resp.data.id}`);
+        });
+    };
 
-    render() {
-        return (
-            <div className="content">
-                <div className="page-curso1">
-                    {this.state.lista.map(
-                        (curso) =>
-                            <div className="curso-div">
-                                <img className="curso-div-img" src={require("../assets/ImagensCursos/" + curso.imagem)}></img>
-                                <h4>{curso.nomeCurso}</h4>
-                            </div>
-                    )}
-                </div>
-
-                <div className="page-cursos2">
-                    {this.state.lista.map(
-                        (curso) =>
-                        <div className="curso-div2">
-                            <img className="curso-div2-img" src={require("../assets/ImagensCursos/" + curso.imagem)}></img>
-                            <h5><strong>{curso.nomeCurso}</strong></h5>
-                            <button onClick={() => {this.navigate("/pageCurso/"+this.getCurso(curso.id))}}>Saiba mais</button>
-                        </div>
-                    )}
-                </div>
+    return (
+        <div className="content">
+            <div className="page-curso1">
+                {state.lista.map((curso) => (
+                    <div className="curso-div" key={curso.id} onClick={() => getCurso(curso.id)}>
+                        <img className="curso-div-img" src={require("../assets/ImagensCursos/" + curso.imagem)} alt={curso.nomeCurso} />
+                        <h4>{curso.nomeCurso}</h4>
+                    </div>
+                ))}
             </div>
-        )
-    }
+
+            <div className="page-cursos2">
+                {state.lista.map((curso) => (
+                    <div className="curso-div2" key={curso.id} onClick={() => getCurso(curso.id)}>
+                        <img className="curso-div2-img" src={require("../assets/ImagensCursos/" + curso.imagem)} alt={curso.nomeCurso} />
+                        <h5>
+                            <strong>{curso.nomeCurso}</strong>
+                        </h5>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 }

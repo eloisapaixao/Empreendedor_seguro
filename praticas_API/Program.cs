@@ -32,6 +32,10 @@ builder.Services.AddDbContext<CursosContext>(options =>{
     options.UseSqlServer(builder.Configuration.GetConnectionString("StringConexaoSQLServer"));
 });
 
+builder.Services.AddDbContext<VideosContext>(options =>{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("StringConexaoSQLServer"));
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

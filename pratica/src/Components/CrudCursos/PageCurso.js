@@ -4,20 +4,34 @@ import axios from "axios"
 import { useNavigate } from "react-router"
 import { useParams } from "react-router-dom"
 
-const urlAPI = "https://localhost:7204/api/Cursos"
+const urlAPI = "https://localhost:7204/api/Cursos/"
 
 const initialState = {
     cursos: { id: 0, imagem: ' ', nomeCurso: ' ', descricao: ' ', qtdAulas: 0, cargaHoraria: 0, qtdExercicio: 0},
     lista: []
 }
 
+const initialState2 = {
+    videos: {id: 0, idCurso: 0, link: ' '},
+    lista: []
+}
+
 export const PageCursos = () => {
     const [state, setState] = useState({ ...initialState })
     const {id} = useParams()
+    const [nome, setNome] = useState("caju")
+    const [imagem, setImagem] = useState("gestaop.jpg")
+    const [descricao, setDescricao] = useState("aaaaaa")
 
     useEffect(() => {
-        axios(urlAPI).then(resp => {
+        if (!sessionStorage.getItem("usuario"))
+            window.location.href = "/login"
+
+        axios(urlAPI + id).then(resp => {
             setState({ lista: resp.data })
+            setNome(resp.data.nomeCurso)
+            setImagem(resp.data.imagem)
+            setDescricao(resp.data.descricao)
         })
     }, []);
 
@@ -25,12 +39,18 @@ export const PageCursos = () => {
         <div className="content">
             <div className="corpo">
                 <div className="titulo">
-                    <img src="#" className="corpo_imagem"></img>
+                    <img src={require("../assets/ImagensCursos/" + imagem)} className="corpo_imagem"></img>
                     <h4>Curso de</h4>
-                    <h1>Nome do curso</h1>
+                    <h1>{nome}</h1>
+                </div>
+                <div className="corpo_descricao">
+                    <h5 className="h5">{descricao}</h5>
                 </div>
                 <div className="corpo_desenvolvimento">
-                    
+                    <details className="details">
+                        <summary className="summary">Video aula 1</summary>
+                        <p>OIIII</p>
+                    </details>
                 </div>
             </div>
         </div>

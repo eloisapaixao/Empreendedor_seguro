@@ -38,7 +38,6 @@ export const CrudUsuario = () => {
             const lista = this.getListaAtualizada(resp.data)
             setState({ usuario: initialState.usuario, lista })
         }).catch(err => {
-            alert("Usuário já cadastrado!")
         })
     })
 
@@ -109,7 +108,7 @@ export const CrudUsuario = () => {
                         <input type="text" name="txt1" id="txtCPF" placeholder="Digite seu cpf"></input><br></br><br></br>
                         <input type="text" name="txt2" id="txtNomeC" placeholder="Nome completo"></input><br></br><br></br>
                         <input type="text" name="txt3" id="txtEmailC" placeholder="Digite seu email"></input><br></br><br></br>
-                        <input type="text" name="txt4" id="txtSenha" placeholder="Senha"></input><br></br>
+                        <input type="text" name="txt4" id="txtSenha" placeholder="Senha (somente números)"></input><br></br>
                         <button id="btn1" onClick={salvar}>Cadastrar</button>
                         <h3 className="h3">Junte-se a mais de 150 mil empreendedores de impacto!</h3>
                         <p className="p">Acesse gratuitamente todos os nossos conteúdos</p>

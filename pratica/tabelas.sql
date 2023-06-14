@@ -16,5 +16,12 @@ create table Cursos(
 )
 
 update Cursos set nomeCurso = 'Tecnicas de venda' where id = 3
-select * from Cursos
-drop table Cursos
+select * from Videos
+drop table Videos
+
+create table Videos(
+	id int identity(1,1) primary key, 
+	idCurso int,
+	foreign key (idCurso) references Cursos(id),
+	link varchar(5000)
+)
