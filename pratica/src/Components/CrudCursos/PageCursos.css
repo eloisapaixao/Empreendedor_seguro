@@ -36,19 +36,23 @@ h1{
 
 .corpo_desenvolvimento{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    overflow-y: scroll;
+    width: 70%;
+    margin: auto;
+    height: 200px;
 }
 
 .details{
-    width: 70%;
-    overflow-y: scroll;
+    width: 100%;
 }
 
 .summary{
     background-color: #9da06c;
     height: 80px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }

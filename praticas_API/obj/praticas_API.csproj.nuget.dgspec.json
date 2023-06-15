@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC-Gamer\\Documents\\GitHub\\Empreendedor_seguro\\praticas_API\\praticas_API.csproj": {}
+    "C:\\Users\\u22127\\Documents\\GitHub\\Empreendedor_seguro\\praticas_API\\praticas_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC-Gamer\\Documents\\GitHub\\Empreendedor_seguro\\praticas_API\\praticas_API.csproj": {
+    "C:\\Users\\u22127\\Documents\\GitHub\\Empreendedor_seguro\\praticas_API\\praticas_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-Gamer\\Documents\\GitHub\\Empreendedor_seguro\\praticas_API\\praticas_API.csproj",
+        "projectUniqueName": "C:\\Users\\u22127\\Documents\\GitHub\\Empreendedor_seguro\\praticas_API\\praticas_API.csproj",
         "projectName": "praticas_API",
-        "projectPath": "C:\\Users\\PC-Gamer\\Documents\\GitHub\\Empreendedor_seguro\\praticas_API\\praticas_API.csproj",
-        "packagesPath": "C:\\Users\\PC-Gamer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC-Gamer\\Documents\\GitHub\\Empreendedor_seguro\\praticas_API\\obj\\",
+        "projectPath": "C:\\Users\\u22127\\Documents\\GitHub\\Empreendedor_seguro\\praticas_API\\praticas_API.csproj",
+        "packagesPath": "C:\\Users\\u22127\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\u22127\\Documents\\GitHub\\Empreendedor_seguro\\praticas_API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\PC-Gamer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\u22127\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,10 +66,29 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.16, 6.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.16, 6.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.16, 6.0.16]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.16, 6.0.16]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -73,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
         }
       }
     }

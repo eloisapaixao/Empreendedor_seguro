@@ -40,15 +40,15 @@
 /*segunda div*/
 .page-cursos2{
     overflow-y: scroll;
-    margin-left: 80px;
-    width: 1435px;
-    height: 335px;
+    margin-left: 65px;
+    width: 1235px;
+    height: 235px;
 }
 
 .curso-div2{
     border-top: solid black 1px;
     padding: 10px;
-    width: 1398px;
+    width: 1198px;
     height: 90px;
     background-color: #b7ba86;
     display: flex;
