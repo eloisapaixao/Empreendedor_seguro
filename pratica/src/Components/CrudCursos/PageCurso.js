@@ -46,11 +46,14 @@ export const PageCursos = () => {
                 <div className="corpo_descricao">
                     <h5 className="h5">{descricao}</h5>
                 </div>
+
                 <div className="corpo_desenvolvimento">
-                    <details className="details">
-                        <summary className="summary">Video aula 1</summary>
-                        <p>OIIII</p>
-                    </details>
+                    {state.lista.map((video) => (
+                        <details className="details" key={video.id}>
+                            <summary className="summary">Video aula 1</summary>
+                            <video src={require(video.link)}></video>
+                        </details>
+                    ))}
                 </div>
             </div>
         </div>
